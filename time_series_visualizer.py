@@ -14,5 +14,9 @@ df = pd.read_csv('fcc-forum-pageviews.csv',
 df = df[(df['value'] >= df['value'].quantile(0.025))
         & (df['value'] <= df['value'].quantile(0.975))]
 
-
+def draw_bar_plot():
+    
+    # Save image and return fig (don't change this part)
+    fig.savefig('bar_plot.png')
+    return fig
 
