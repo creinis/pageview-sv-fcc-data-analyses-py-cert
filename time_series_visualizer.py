@@ -35,6 +35,10 @@ def draw_bar_plot():
     df_bar['month'] = df_bar.index.strftime('%B')
     df_bar = df_bar.groupby(['year', 'month'])['value'].mean().unstack()
     
+    # Reorder the months in df_bar
+    months_order = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+    df_bar = df_bar.reindex(columns=months_order)
+  
     # Draw bar plot
     fig = df_bar.plot(kind='bar', legend=True, figsize=(14, 7)).figure
     plt.xlabel('Years', fontsize=10)
