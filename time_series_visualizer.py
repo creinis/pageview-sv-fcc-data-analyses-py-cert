@@ -29,6 +29,7 @@ def draw_line_plot():
 
 def draw_bar_plot():
     
+    
     # Save image and return fig (don't change this part)
     fig.savefig('bar_plot.png')
     return fig
